@@ -1,4 +1,4 @@
-function  [imgFace, LeftEye, RightEye, Mouth, LeftEyebrow,  RightEyebrow] = detectFacialRegions(I)
+function  [imgFace, LeftEye, RightEye, Mouth, LeftEyebrow,  RightEyebrow, Face] = detectFacialRegions(I)
 %  This function is to find the facial regions (eyes, mouth and eyebrows)
 %  Reference:
 %  Silva, Caroline; Schnitman, Leizer ;  Oliveira, Luciano. "Detection of Facial Landmarks

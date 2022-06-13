@@ -1,6 +1,6 @@
-function [puntosfaciales]=facerecognitionTFG(imagen)
+function [puntosfaciales, FaceLocation]=facerecognitionTFG(imagen)
 I=imagen;
-[imgFace, LeftEye, RightEye, Mouth, LeftEyebrow,  RightEyebrow] = detectFacialRegions(I);
+[imgFace, LeftEye, RightEye, Mouth, LeftEyebrow,  RightEyebrow, FaceLocation] = detectFacialRegions(I);
 %% landmark detection
 
 % landmark setting to Eyes and Mouth (4 and 5)
@@ -45,6 +45,7 @@ coordMouth = landmarks(landMouth,MouthCont,Mouth,landconf);
 coordLeftEyebrow = landmarks(landLeftEyebrow,leftEyebrowCont,LeftEyebrow,landconfEyebrow);
 coordRightEyebrow = landmarks(landRightEyebrow,RightEyebrowCont,RightEyebrow,landconfEyebrow);
 %% return
+
 puntosfaciales=[coordLeftEye,coordLeftEyebrow,coordMouth,coordRightEye,coordRightEyebrow];
 
 

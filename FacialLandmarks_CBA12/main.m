@@ -16,8 +16,7 @@ videoFrame = snapshot(cam);
 frameSize = size(videoFrame);
 
 %Creamos un objeto para mostrar la imagen en un video
-
-videoPlayer = vision.VideoPlayer('Position',[100 100 [frameSize(2),frameSize(1)]+30]);
+%videoPlayer = vision.VideoPlayer('Position',[100 100 [frameSize(2),frameSize(1)]+30]);
 
 for i= 1:100
     videoFrame = snapshot(cam); %todas las fotos
@@ -30,10 +29,10 @@ for i= 1:100
 
         imwrite(videoFrame,['fotos\',ent,'.jpg']); %Se guarda en la carpeta fotos con la extension jpg
     else
-        puntosfaciales=facerecognitionTFG(videoFrame);
-        pintarpuntosfaciales(videoFrame,puntosfaciales);
+        [puntosfaciales, faceLocation] = facerecognitionTFG(videoFrame);
+        pintarpuntosfaciales(videoFrame,puntosfaciales, faceLocation);
     end
-    step(videoPlayer,videoFrame); %muestra el video
+%     step(videoPlayer,videoFrame); %muestra el video
 end
 
 
@@ -41,4 +40,4 @@ end
 % Limpiar las variables
 
 clear cam;
-release(videoPlayer);
+% release(videoPlayer);

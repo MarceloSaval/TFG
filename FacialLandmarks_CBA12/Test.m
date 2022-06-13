@@ -18,7 +18,7 @@
 
 %% read an input image and detect facial regions (face, eyes, mouth, and eyebrows)
 
-clc; clear;
+%clc; clear;
 
 % read the input image
 I = imread('face.jpg');
