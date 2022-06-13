@@ -28,7 +28,14 @@ for i= 1:100
         mkdir('fotos'); %Crea la carpeta
 
         imwrite(videoFrame,['fotos\',ent,'.jpg']); %Se guarda en la carpeta fotos con la extension jpg
-    else
+         else
+        
+        % aplicar filtros
+%         RGBNormalized 
+%         Espacios de color
+%         Filtro de mediana
+        
+        %
         [puntosfaciales, faceLocation] = facerecognitionTFG(videoFrame);
         pintarpuntosfaciales(videoFrame,puntosfaciales, faceLocation);
     end
